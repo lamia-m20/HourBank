@@ -1,0 +1,865 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: HourBank\n"
+"Language: ar\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+msgid "A platform for exchanging skills with time"
+msgstr "A platform for exchanging skills with time"
+
+msgid "Account type"
+msgstr "نوع الحساب"
+
+msgid "Activate"
+msgstr "تفعيل"
+
+msgid "Active users"
+msgstr "مستخدمون نشطون"
+
+msgid "Add skill"
+msgstr "إضافة مهارة"
+
+msgid "All categories"
+msgstr "كل التصنيفات"
+
+msgid "All delivery methods"
+msgstr "كل طرق التقديم"
+
+msgid "All levels"
+msgstr "كل المستويات"
+
+msgid "All rights reserved"
+msgstr "جميع الحقوق محفوظة"
+
+msgid "An overview of your HourBank activity."
+msgstr "An overview of your HourBank activity."
+
+msgid "Any duration"
+msgstr "أي مدة"
+
+msgid "Apply filters"
+msgstr "تطبيق الفلاتر"
+
+msgid "Available balance"
+msgstr "الرصيد المتاح"
+
+msgid "Available hours"
+msgstr "الساعات المتاحة"
+
+msgid "Available offers"
+msgstr "العروض المتاحة"
+
+msgid "Available skills"
+msgstr "المهارات المتاحة"
+
+msgid "Available to teach"
+msgstr "متاح لتقديم المهارات"
+
+msgid "Bio"
+msgstr "النبذة الشخصية"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Category"
+msgstr "التصنيف"
+
+msgid "Choose a category and type your skill name."
+msgstr "اختر التصنيف واكتب اسم مهارتك."
+
+msgid "Choose country"
+msgstr "اختر الدولة"
+
+msgid "Choose region"
+msgstr "اختر المنطقة"
+
+msgid "Close"
+msgstr "إغلاق"
+
+msgid "Confirm password"
+msgstr "تأكيد كلمة المرور"
+
+msgid "Country"
+msgstr "الدولة"
+
+msgid "Create account"
+msgstr "إنشاء حساب"
+
+msgid "Create offer"
+msgstr "إنشاء العرض"
+
+msgid "Dashboard"
+msgstr "لوحة التحكم"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Delivery method"
+msgstr "طريقة التقديم"
+
+msgid "Duration"
+msgstr "المدة"
+
+msgid "Earn hours"
+msgstr "اكسب ساعات"
+
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "Edit offer"
+msgstr "تعديل العرض"
+
+msgid "Edit profile"
+msgstr "تعديل الملف الشخصي"
+
+msgid "Edit skill offer"
+msgstr "تعديل عرض المهارة"
+
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+msgid "Example: Python or graphic design"
+msgstr "مثال: Python أو التصميم الجرافيكي"
+
+msgid "Exchange knowledge and experience using time."
+msgstr "Exchange knowledge and experience using time."
+
+msgid "Exchange requests"
+msgstr "طلبات التبادل"
+
+msgid "Explore skills"
+msgstr "استكشف المهارات"
+
+msgid "First name"
+msgstr "الاسم الأول"
+
+msgid "Get started"
+msgstr "ابدأ الآن"
+
+msgid "Held balance"
+msgstr "الرصيد المحجوز"
+
+msgid "Home"
+msgstr "الرئيسية"
+
+msgid "Hours exchanged"
+msgstr "ساعات متبادلة"
+
+msgid "How does HourBank work?"
+msgstr "كيف يعمل HourBank؟"
+
+msgid "How it works"
+msgstr "كيف تعمل المنصة"
+
+msgid "Individual"
+msgstr "فرد"
+
+msgid "Join a community that exchanges knowledge, one hour at a time."
+msgstr "Join a community that exchanges knowledge, one hour at a time."
+
+msgid "Join the skill exchange community"
+msgstr "Join the skill exchange community"
+
+msgid "Language"
+msgstr "اللغة"
+
+msgid "Last name"
+msgstr "اسم العائلة"
+
+msgid "Learn from the community"
+msgstr "Learn from the community"
+
+msgid "Learn what you love"
+msgstr "تعلّم ما تحب"
+
+msgid "Learning journey"
+msgstr "رحلتي التعليمية"
+
+msgid "Level"
+msgstr "المستوى"
+
+msgid "Log in"
+msgstr "تسجيل الدخول"
+
+msgid "Log out"
+msgstr "تسجيل الخروج"
+
+msgid "Menu"
+msgstr "القائمة"
+
+msgid "Message to the provider"
+msgstr "Message to the provider"
+
+msgid "My hours / Wallet"
+msgstr "ساعاتي / المحفظة"
+
+msgid "My profile"
+msgstr "حسابي"
+
+msgid "My skills"
+msgstr "مهاراتي"
+
+msgid "No skills are available right now"
+msgstr "لا توجد مهارات متاحة حاليًا"
+
+msgid "No transactions yet"
+msgstr "لا توجد حركات حتى الآن"
+
+msgid "Offer description"
+msgstr "وصف العرض"
+
+msgid "Offer is active"
+msgstr "العرض نشط"
+
+msgid "Offer title"
+msgstr "عنوان العرض"
+
+msgid "Organization"
+msgstr "منظمة"
+
+msgid "Other"
+msgstr "أخرى"
+
+msgid "Password"
+msgstr "كلمة المرور"
+
+msgid "Pause"
+msgstr "إيقاف"
+
+msgid "Preferred language"
+msgstr "اللغة المفضلة"
+
+msgid "Professional"
+msgstr "محترف"
+
+msgid "Profile image"
+msgstr "الصورة الشخصية"
+
+msgid "Recent transactions"
+msgstr "آخر الحركات"
+
+msgid "Region"
+msgstr "المنطقة"
+
+msgid "Requested hours"
+msgstr "Requested hours"
+
+msgid "Requested hours must be greater than zero."
+msgstr "Requested hours must be greater than zero."
+
+msgid "Reset"
+msgstr "مسح"
+
+msgid "Save changes"
+msgstr "حفظ التغييرات"
+
+msgid "Search"
+msgstr "بحث"
+
+msgid "Search by skill, category, offer, or provider."
+msgstr "Search by skill, category, offer, or provider."
+
+msgid "Search for Python, programming, design..."
+msgstr "Search for Python, programming, design..."
+
+msgid "Session cost in hours"
+msgstr "تكلفة الجلسة بالساعات"
+
+msgid "Session cost must be greater than zero."
+msgstr "Session cost must be greater than zero."
+
+msgid "Session duration in minutes"
+msgstr "مدة الجلسة بالدقائق"
+
+msgid "Session duration must be between 15 and 480 minutes."
+msgstr "Session duration must be between 15 and 480 minutes."
+
+msgid "Sessions"
+msgstr "الجلسات"
+
+msgid "Share your expertise"
+msgstr "شارك خبرتك"
+
+msgid "Share your expertise with someone who needs it."
+msgstr "Share your expertise with someone who needs it."
+
+msgid "Share your skills and learn something new."
+msgstr "شارك مهاراتك وتعلّم شيئًا جديدًا."
+
+msgid "Simple and transparent"
+msgstr "Simple and transparent"
+
+msgid "Skill name"
+msgstr "اسم المهارة"
+
+msgid "Skill name is required."
+msgstr "Skill name is required."
+
+msgid "Suggested date"
+msgstr "Suggested date"
+
+msgid "Suggested time"
+msgstr "Suggested time"
+
+msgid "Teach a skill"
+msgstr "علّم مهارة"
+
+msgid ""
+"Teach what you know, earn hours, and use them to learn your next skill."
+msgstr ""
+"Teach what you know, earn hours, and use them to learn your next skill."
+
+msgid "Time is added to your wallet for every session."
+msgstr "Time is added to your wallet for every session."
+
+msgid "Time zone"
+msgstr "المنطقة الزمنية"
+
+msgid "Total earned"
+msgstr "إجمالي المكتسب"
+
+msgid "Total spent"
+msgstr "إجمالي المستخدم"
+
+msgid "Trainer"
+msgstr "مدرب"
+
+msgid "Try changing the filters or add the first skill offer."
+msgstr "Try changing the filters or add the first skill offer."
+
+msgid "Use your hours to book a session with an expert."
+msgstr "Use your hours to book a session with an expert."
+
+msgid "User satisfaction"
+msgstr "رضا المستخدمين"
+
+msgid "Username"
+msgstr "اسم المستخدم"
+
+msgid "View details"
+msgstr "عرض التفاصيل"
+
+msgid "Welcome back"
+msgstr "مرحبًا بعودتك"
+
+msgid "You have not added any skills yet"
+msgstr "لم تضف أي مهارات بعد"
+
+msgid "Your available balance"
+msgstr "رصيدك المتاح"
+
+msgid "Your time can open new horizons."
+msgstr "Your time can open new horizons."
+
+msgid "Your time has value"
+msgstr "لوقتك قيمة"
+
+msgid "hours"
+msgstr "ساعات"
+
+msgid "minutes"
+msgstr "دقيقة"
+
+msgid "Beginner"
+msgstr "مبتدئ"
+
+msgid "Intermediate"
+msgstr "متوسط"
+
+msgid "Advanced"
+msgstr "متقدم"
+
+msgid "Expert"
+msgstr "خبير"
+
+msgid "Any level"
+msgstr "أي مستوى"
+
+msgid "Remote"
+msgstr "عن بعد"
+
+msgid "In person"
+msgstr "حضوري"
+
+msgid "Remote and in person"
+msgstr "عن بعد وحضوري"
+
+msgid "Pending"
+msgstr "بانتظار الموافقة"
+
+msgid "Accepted"
+msgstr "مقبول"
+
+msgid "Rejected"
+msgstr "مرفوض"
+
+msgid "Scheduled"
+msgstr "مجدول"
+
+msgid "In progress"
+msgstr "قيد التنفيذ"
+
+msgid "Completed"
+msgstr "مكتمل"
+
+msgid "Cancelled"
+msgstr "ملغي"
+
+msgid "Disputed"
+msgstr "متنازع عليه"
+
+msgid "Waiting confirmation"
+msgstr "بانتظار التأكيد"
+
+msgid "Welcome bonus"
+msgstr "رصيد ترحيبي"
+
+msgid "Earned"
+msgstr "مكتسب"
+
+msgid "Spent"
+msgstr "مستخدم"
+
+msgid "Hold"
+msgstr "حجز"
+
+msgid "Release"
+msgstr "فك حجز"
+
+msgid "Refund"
+msgstr "استرداد"
+
+msgid "Adjustment"
+msgstr "تعديل"
+
+msgid "Bonus"
+msgstr "مكافأة"
+
+msgid "Credit"
+msgstr "إضافة"
+
+msgid "Debit"
+msgstr "خصم"
+
+msgid "Active"
+msgstr "نشط"
+
+msgid "Captured"
+msgstr "تم التحويل"
+
+msgid "Released"
+msgstr "تم تحريره"
+
+msgid "Received requests"
+msgstr "الطلبات المستلمة"
+
+msgid "Sent requests"
+msgstr "الطلبات المرسلة"
+
+msgid "Cost"
+msgstr "التكلفة"
+
+msgid "Requested at"
+msgstr "تاريخ الطلب"
+
+msgid "Teach only"
+msgstr "تعليم فقط"
+
+msgid "Reject"
+msgstr "رفض"
+
+msgid "Exchange skills"
+msgstr "تبادل المهارات"
+
+msgid "No received requests"
+msgstr "لا توجد طلبات مستلمة"
+
+msgid "No sent requests"
+msgstr "لا توجد طلبات مرسلة"
+
+msgid "I learned"
+msgstr "تعلمت"
+
+msgid "I taught"
+msgstr "علّمت"
+
+msgid "No learning records yet"
+msgstr "لا توجد سجلات تعلم بعد"
+
+msgid "No teaching records yet"
+msgstr "لا توجد سجلات تعليم بعد"
+
+msgid "Date of birth"
+msgstr "تاريخ الميلاد"
+
+msgid "Date of birth cannot be in the future."
+msgstr "لا يمكن أن يكون تاريخ الميلاد في المستقبل."
+
+msgid "Age"
+msgstr "العمر"
+
+msgid "Add your date of birth to display your age on your public profile."
+msgstr "أضف تاريخ ميلادك لعرض عمرك في ملفك العام."
+
+msgid "Add date of birth"
+msgstr "إضافة تاريخ الميلاد"
+
+msgid "Account settings"
+msgstr "إعدادات الحساب"
+
+msgid "Session start date"
+msgstr "تاريخ بدء الجلسة"
+
+msgid "Session start time"
+msgstr "وقت بدء الجلسة"
+
+msgid "You cannot select a past date."
+msgstr "لا يمكنك اختيار تاريخ سابق."
+
+msgid "You cannot select a past time."
+msgstr "لا يمكنك اختيار وقت سابق."
+
+msgid "Request a session"
+msgstr "طلب جلسة"
+
+msgid "Request a session with %(provider)s"
+msgstr "طلب جلسة مع %(provider)s"
+
+msgid "Provider image"
+msgstr "صورة مقدم المهارة"
+
+msgid "Rating"
+msgstr "التقييم"
+
+msgid "Skill"
+msgstr "المهارة"
+
+msgid "Send session request"
+msgstr "إرسال طلب الجلسة"
+
+msgid "HourBank member profile"
+msgstr "ملف عضو HourBank"
+
+msgid "Location"
+msgstr "الموقع"
+
+msgid "Average rating"
+msgstr "متوسط التقييم"
+
+msgid "Completed sessions"
+msgstr "الجلسات المكتملة"
+
+msgid "No active offers right now."
+msgstr "لا توجد عروض نشطة حالياً."
+
+msgid "Back to explore skills"
+msgstr "العودة إلى استكشاف المهارات"
+
+msgid "Skill provider"
+msgstr "مقدم المهارة"
+
+msgid "View profile"
+msgstr "عرض الملف الشخصي"
+
+msgid "Log in to request a session"
+msgstr "سجل الدخول لطلب جلسة"
+
+msgid "Please add your date of birth to complete your profile."
+msgstr "يرجى إضافة تاريخ ميلادك لإكمال ملفك الشخصي."
+
+msgid "%(age)s years old"
+msgstr "%(age)s سنة"
+
+msgid "Age not specified"
+msgstr "العمر غير محدد"
+
+msgid "Session duration"
+msgstr "مدة الجلسة"
+
+msgid "Session cost"
+msgstr "تكلفة الجلسة"
+
+msgid "City"
+msgstr "المدينة"
+
+msgid "%(cost)s hours from your balance"
+msgstr "%(cost)s ساعة من رصيدك"
+
+msgid "Awaiting confirmation"
+msgstr "بانتظار التأكيد"
+
+msgid "Skill exchange offer"
+msgstr "عرض تبادل المهارة"
+
+msgid "Learner"
+msgstr "المتعلم"
+
+msgid "Provider"
+msgstr "مقدم المهارة"
+
+msgid "Skill offer"
+msgstr "عرض المهارة"
+
+msgid "Hour recipient"
+msgstr "مستلم الساعات"
+
+msgid "Enter session room"
+msgstr "دخول غرفة الجلسة"
+
+msgid "Accept"
+msgstr "قبول"
+
+msgid "No sessions yet."
+msgstr "لا توجد جلسات حتى الآن."
+
+msgid "Session room"
+msgstr "غرفة الجلسة"
+
+msgid "The session was accepted and you can now communicate."
+msgstr "تم قبول الجلسة ويمكنكما الآن التواصل."
+
+msgid "Ready to call"
+msgstr "جاهز للاتصال"
+
+msgid "Start video call"
+msgstr "ابدأ مكالمة فيديو"
+
+msgid "Audio call"
+msgstr "مكالمة صوتية"
+
+msgid "Mute microphone"
+msgstr "كتم الميكروفون"
+
+msgid "Turn camera off"
+msgstr "إيقاف الكاميرا"
+
+msgid "End call"
+msgstr "إنهاء المكالمة"
+
+msgid "Session chat"
+msgstr "محادثة الجلسة"
+
+msgid "Write a message..."
+msgstr "اكتب رسالة..."
+
+msgid "Send"
+msgstr "إرسال"
+
+msgid "I finished teaching"
+msgstr "أنهيت الشرح"
+
+msgid "Was the session completed?"
+msgstr "هل اكتملت الجلسة؟"
+
+msgid "Yes, session completed"
+msgstr "نعم، تمت الجلسة"
+
+msgid "There is a problem"
+msgstr "توجد مشكلة"
+
+msgid "Session completed"
+msgstr "تمت الجلسة"
+
+msgid "The issue was recorded. Held hours will not transfer until review."
+msgstr "تم تسجيل المشكلة ولن يتم تحويل الساعات حتى تتم مراجعتها."
+
+msgid "Held hours"
+msgstr "الساعات المحجوزة"
+
+msgid "Offer"
+msgstr "عرض اتصال"
+
+msgid "Answer"
+msgstr "رد اتصال"
+
+msgid "ICE candidate"
+msgstr "مرشح ICE"
+
+msgid "Hang up"
+msgstr "إنهاء الاتصال"
+
+msgid "Sender"
+msgstr "المرسل"
+
+msgid "Hours you can use now."
+msgstr "الساعات التي يمكنك استخدامها الآن."
+
+msgid "Hours held for accepted sessions that are not confirmed yet."
+msgstr "الساعات المحجوزة لجلسات مقبولة لم يتم تأكيدها بعد."
+
+msgid "Hours earned only after learner confirmation."
+msgstr "الساعات المكتسبة فقط بعد تأكيد المتعلم."
+
+msgid "Hours finally spent after session confirmation."
+msgstr "الساعات المستخدمة فعلياً بعد تأكيد الجلسة."
+
+msgid "Held"
+msgstr "محجوز"
+
+msgid "Turn camera on"
+msgstr "تشغيل الكاميرا"
+
+msgid "Waiting for the other participant"
+msgstr "بانتظار الطرف الآخر"
+
+msgid "Call ended"
+msgstr "تم إنهاء المكالمة"
+
+msgid "Unmute microphone"
+msgstr "تشغيل الميكروفون"
+
+msgid "Camera or microphone permission was denied."
+msgstr "تم رفض صلاحية الكاميرا أو الميكروفون."
+
+msgid "Messages"
+msgstr "المحادثات"
+
+msgid "Unread messages"
+msgstr "رسائل غير مقروءة"
+
+msgid "No messages yet."
+msgstr "لا توجد رسائل بعد."
+
+msgid "No conversations yet."
+msgstr "لا توجد محادثات بعد."
+
+msgid "Conversations appear here after a session request is accepted."
+msgstr "تظهر المحادثات هنا بعد قبول طلب جلسة."
+
+msgid "Video call"
+msgstr "اتصال فيديو"
+
+msgid "Calling..."
+msgstr "جارٍ الاتصال..."
+
+msgid "Connected"
+msgstr "متصل"
+
+msgid "Decline"
+msgstr "رفض"
+
+msgid "Client message ID"
+msgstr "معرف رسالة العميل"
+
+msgid "What issue did you experience?"
+msgstr "ما المشكلة التي واجهتك؟"
+
+msgid "Choose the reason closest to what happened during the session."
+msgstr "اختر السبب الأقرب لما حدث خلال الجلسة."
+
+msgid "The other participant did not teach the agreed content"
+msgstr "الطرف الآخر لم يشرح المحتوى المتفق عليه"
+
+msgid "The other participant did not attend the session"
+msgstr "الطرف الآخر لم يحضر الجلسة"
+
+msgid "The session ended before the agreed time"
+msgstr "انتهت الجلسة قبل الوقت المتفق عليه"
+
+msgid "The teaching style was not suitable"
+msgstr "أسلوب الشرح كان غير مناسب"
+
+msgid "There was inappropriate behavior"
+msgstr "كان هناك تصرف غير لائق"
+
+msgid "The content differed from the offer description"
+msgstr "المحتوى مختلف عن وصف العرض"
+
+msgid "Technical issue"
+msgstr "مشكلة تقنية"
+
+msgid "Additional details"
+msgstr "تفاصيل إضافية"
+
+msgid "Briefly describe the issue"
+msgstr "اشرح المشكلة باختصار"
+
+msgid "Submit issue"
+msgstr "إرسال المشكلة"
+
+msgid "Your issue has been recorded. The held hours will not be transferred until the case is reviewed."
+msgstr "تم تسجيل المشكلة، ولن يتم تحويل الساعات حتى تتم مراجعتها."
+
+msgid "New message"
+msgstr "رسالة جديدة"
+
+msgid "HourBank"
+msgstr "بنك الوقت"
+
+msgid "A time-based skill and knowledge exchange platform where you can teach what you know and learn new skills from others in a flexible and fair way."
+msgstr "منصة لتبادل المهارات والمعرفة بالوقت، تتيح لك تعليم ما تتقنه وتعلّم مهارات جديدة من الآخرين بطريقة مرنة وعادلة."
+
+msgid "Invalid username or password."
+msgstr "اسم المستخدم أو كلمة المرور غير صحيحة."
+
+msgid "Forgot your password?"
+msgstr "نسيت كلمة المرور؟"
+
+msgid "Reset password"
+msgstr "استعادة كلمة المرور"
+
+msgid "Enter the email associated with your account."
+msgstr "أدخل البريد الإلكتروني المرتبط بحسابك."
+
+msgid "Send password reset link"
+msgstr "إرسال رابط تغيير كلمة المرور"
+
+msgid "Check your email"
+msgstr "تحقق من بريدك الإلكتروني"
+
+msgid "If an account exists with this email, a password reset link will be sent."
+msgstr "إذا كان هذا البريد مرتبطاً بحساب، فسيتم إرسال رابط إعادة تعيين كلمة المرور إليه."
+
+msgid "Choose a new password"
+msgstr "اختر كلمة مرور جديدة"
+
+msgid "New password"
+msgstr "كلمة المرور الجديدة"
+
+msgid "Confirm new password"
+msgstr "تأكيد كلمة المرور الجديدة"
+
+msgid "Change password"
+msgstr "تغيير كلمة المرور"
+
+msgid "Invalid password reset link"
+msgstr "رابط إعادة تعيين كلمة المرور غير صالح"
+
+msgid "This password reset link is invalid or has already been used. Please request a new link."
+msgstr "رابط إعادة تعيين كلمة المرور غير صالح أو سبق استخدامه. يرجى طلب رابط جديد."
+
+msgid "Request a new link"
+msgstr "طلب رابط جديد"
+
+msgid "Password changed"
+msgstr "تم تغيير كلمة المرور"
+
+msgid "Your password has been changed successfully."
+msgstr "تم تغيير كلمة المرور بنجاح."
+
+msgid "Password reset - HourBank"
+msgstr "إعادة تعيين كلمة المرور - HourBank"
+
+msgid "" 
+"Hello,\n"
+"\n"
+"We received a request to reset the password for your HourBank account.\n"
+"\n"
+"Click the following link to set a new password:"
+msgstr ""
+"مرحباً،\n"
+"\n"
+"تلقينا طلباً لإعادة تعيين كلمة المرور لحسابك في HourBank.\n"
+"\n"
+"اضغط على الرابط التالي لتعيين كلمة مرور جديدة:"
+
+msgid "" 
+"If you did not request a password change, you can ignore this email.\n"
+"\n"
+"HourBank"
+msgstr ""
+"إذا لم تطلب تغيير كلمة المرور، يمكنك تجاهل هذه الرسالة.\n"
+"\n"
+"HourBank"

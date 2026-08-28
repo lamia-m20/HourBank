@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class SkillCategory(models.Model):
@@ -88,16 +89,13 @@ class Skill(models.Model):
 class SkillOffer(models.Model):
 
     LEVEL_CHOICES = [
-        ('beginner', 'مبتدئ'),
-        ('intermediate', 'متوسط'),
-        ('advanced', 'متقدم'),
-        ('expert', 'خبير'),
+        ('beginner', _('Beginner')), ('intermediate', _('Intermediate')),
+        ('advanced', _('Advanced')), ('expert', _('Expert')),
     ]
 
     DELIVERY_CHOICES = [
-        ('online', 'عن بعد'),
-        ('in_person', 'حضوري'),
-        ('both', 'عن بعد وحضوري'),
+        ('online', _('Remote')), ('in_person', _('In person')),
+        ('both', _('Remote and in person')),
     ]
 
     user = models.ForeignKey(
@@ -176,10 +174,8 @@ class SkillOffer(models.Model):
 class SkillRequest(models.Model):
 
     LEVEL_CHOICES = [
-        ('beginner', 'مبتدئ'),
-        ('intermediate', 'متوسط'),
-        ('advanced', 'متقدم'),
-        ('any', 'أي مستوى'),
+        ('beginner', _('Beginner')), ('intermediate', _('Intermediate')),
+        ('advanced', _('Advanced')), ('any', _('Any level')),
     ]
 
     user = models.ForeignKey(

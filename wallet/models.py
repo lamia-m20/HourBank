@@ -2,6 +2,7 @@ import uuid
 
 from django.conf import settings
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class HourWallet(models.Model):
@@ -16,7 +17,7 @@ class HourWallet(models.Model):
     available_balance = models.DecimalField(
         max_digits=10,
         decimal_places=2,
-        default=0,
+        default=20,
         verbose_name='الرصيد المتاح'
     )
 
@@ -54,6 +55,12 @@ class HourWallet(models.Model):
     class Meta:
         verbose_name = 'محفظة ساعات'
         verbose_name_plural = 'محافظ الساعات'
+        constraints = [
+            models.CheckConstraint(condition=models.Q(available_balance__gte=0), name='wallet_available_nonnegative'),
+            models.CheckConstraint(condition=models.Q(held_balance__gte=0), name='wallet_held_nonnegative'),
+            models.CheckConstraint(condition=models.Q(total_earned__gte=0), name='wallet_earned_nonnegative'),
+            models.CheckConstraint(condition=models.Q(total_spent__gte=0), name='wallet_spent_nonnegative'),
+        ]
 
     def __str__(self):
         return f'محفظة {self.user}'
@@ -62,19 +69,13 @@ class HourWallet(models.Model):
 class HourTransaction(models.Model):
 
     TRANSACTION_TYPES = [
-        ('welcome', 'رصيد ترحيبي'),
-        ('earned', 'ساعات مكتسبة'),
-        ('spent', 'ساعات مستخدمة'),
-        ('hold', 'حجز ساعات'),
-        ('release', 'فك حجز'),
-        ('refund', 'استرداد'),
-        ('adjustment', 'تعديل إداري'),
-        ('bonus', 'مكافأة'),
+        ('welcome', _('Welcome bonus')), ('earned', _('Earned')),
+        ('spent', _('Spent')), ('hold', _('Hold')), ('release', _('Release')),
+        ('refund', _('Refund')), ('adjustment', _('Adjustment')), ('bonus', _('Bonus')),
     ]
 
     DIRECTION_CHOICES = [
-        ('credit', 'إضافة'),
-        ('debit', 'خصم'),
+        ('credit', _('Credit')), ('debit', _('Debit')),
     ]
 
     wallet = models.ForeignKey(
@@ -139,6 +140,16 @@ class HourTransaction(models.Model):
         verbose_name = 'حركة ساعات'
         verbose_name_plural = 'حركات الساعات'
         ordering = ['-created_at']
+        constraints = [
+            models.UniqueConstraint(
+                fields=['wallet', 'exchange', 'transaction_type'],
+                condition=models.Q(
+                    exchange__isnull=False,
+                    transaction_type__in=['hold', 'release', 'spent', 'earned'],
+                ),
+                name='unique_wallet_exchange_lifecycle_transaction',
+            )
+        ]
 
     def __str__(self):
         return f'{self.wallet.user} - {self.amount} ساعة'
@@ -147,10 +158,8 @@ class HourTransaction(models.Model):
 class HourHold(models.Model):
 
     STATUS_CHOICES = [
-        ('active', 'محجوز'),
-        ('captured', 'تم التحويل'),
-        ('released', 'تم فك الحجز'),
-        ('cancelled', 'ملغي'),
+        ('active', _('Active')), ('captured', _('Captured')),
+        ('released', _('Released')), ('cancelled', _('Cancelled')),
     ]
 
     wallet = models.ForeignKey(
@@ -160,11 +169,21 @@ class HourHold(models.Model):
         verbose_name='المحفظة'
     )
 
-    exchange = models.OneToOneField(
+    exchange = models.ForeignKey(
         'exchanges.ExchangeRequest',
         on_delete=models.PROTECT,
-        related_name='hour_hold',
+        related_name='hour_holds',
         verbose_name='طلب التبادل'
+    )
+
+    payee = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.PROTECT,
+        related_name='incoming_hour_holds', verbose_name=_('Hour recipient'), null=True, blank=True,
+    )
+
+    offer = models.ForeignKey(
+        'skills.SkillOffer', on_delete=models.PROTECT,
+        related_name='hour_holds', verbose_name=_('Skill offer'), null=True, blank=True,
     )
 
     amount = models.DecimalField(
@@ -195,6 +214,11 @@ class HourHold(models.Model):
         verbose_name = 'حجز ساعات'
         verbose_name_plural = 'حجوزات الساعات'
         ordering = ['-created_at']
+        constraints = [
+            models.UniqueConstraint(
+                fields=['exchange', 'wallet', 'payee', 'offer'], name='unique_exchange_direction_hold'
+            )
+        ]
 
     def __str__(self):
         return f'{self.wallet.user} - {self.amount} ساعة'

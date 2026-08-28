@@ -1,0 +1,8 @@
+(() => {
+  const config=document.getElementById('incoming-call-config');if(!config)return;
+  const ar=document.documentElement.lang==='ar',dismissed=new Set();let visibleId=null;
+  const csrf=document.cookie.match(/(?:^|; )csrftoken=([^;]+)/)?.[1]||'';
+  function removeToast(){document.querySelector('.incoming-call-toast')?.remove();visibleId=null;}
+  function show(call){if(!call||dismissed.has(call.id)||visibleId===call.id)return;removeToast();visibleId=call.id;const toast=document.createElement('aside');toast.className='incoming-call-toast';const title=document.createElement('strong');title.textContent=call.caller+' '+(ar?'يتصل بك':'is calling you');const detail=document.createElement('p');detail.textContent=call.media==='video'?(ar?'اتصال فيديو':'Video call'):(ar?'اتصال صوتي':'Audio call');const actions=document.createElement('div'),accept=document.createElement('button'),decline=document.createElement('button');accept.textContent=ar?'قبول':'Accept';decline.textContent=ar?'رفض':'Decline';accept.addEventListener('click',()=>{location.href=call.room_url;});decline.addEventListener('click',async()=>{dismissed.add(call.id);await fetch(call.signals_url,{method:'POST',headers:{'Content-Type':'application/json','X-CSRFToken':csrf},body:JSON.stringify({type:'hangup',payload:{}})});removeToast();});actions.append(accept,decline);toast.append(title,detail,actions);document.body.appendChild(toast);}
+  async function poll(){try{const response=await fetch(config.dataset.url);if(response.ok){const data=await response.json();if(data.call)show(data.call);else removeToast();}}catch(e){}setTimeout(poll,3000);}poll();
+})();

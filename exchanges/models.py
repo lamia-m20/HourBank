@@ -1,18 +1,15 @@
 from django.conf import settings
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class ExchangeRequest(models.Model):
 
     STATUS_CHOICES = [
-        ('pending', 'بانتظار الموافقة'),
-        ('accepted', 'تمت الموافقة'),
-        ('rejected', 'مرفوض'),
-        ('scheduled', 'تم تحديد الموعد'),
-        ('in_progress', 'الجلسة جارية'),
-        ('completed', 'مكتمل'),
-        ('cancelled', 'ملغي'),
-        ('disputed', 'يوجد نزاع'),
+        ('pending', _('Pending')), ('accepted', _('Accepted')),
+        ('rejected', _('Rejected')), ('in_progress', _('In progress')),
+        ('awaiting_confirmation', _('Awaiting confirmation')), ('completed', _('Completed')),
+        ('cancelled', _('Cancelled')), ('disputed', _('Disputed')),
     ]
 
     requester = models.ForeignKey(
@@ -34,6 +31,17 @@ class ExchangeRequest(models.Model):
         on_delete=models.PROTECT,
         related_name='exchange_requests',
         verbose_name='عرض المهارة'
+    )
+
+    reverse_offer = models.ForeignKey(
+        'skills.SkillOffer', on_delete=models.PROTECT,
+        related_name='reverse_exchange_requests', null=True, blank=True,
+        verbose_name=_('Skill exchange offer'),
+    )
+
+    provider_seen_at = models.DateTimeField(
+        null=True, blank=True, db_index=True,
+        verbose_name=_('Provider seen at'),
     )
 
     requested_hours = models.DecimalField(
@@ -61,7 +69,7 @@ class ExchangeRequest(models.Model):
     )
 
     status = models.CharField(
-        max_length=20,
+        max_length=30,
         choices=STATUS_CHOICES,
         default='pending',
         verbose_name='الحالة'
@@ -89,13 +97,8 @@ class ExchangeRequest(models.Model):
 class ProviderAvailability(models.Model):
 
     DAY_CHOICES = [
-        (0, 'الاثنين'),
-        (1, 'الثلاثاء'),
-        (2, 'الأربعاء'),
-        (3, 'الخميس'),
-        (4, 'الجمعة'),
-        (5, 'السبت'),
-        (6, 'الأحد'),
+        (0, _('Monday')), (1, _('Tuesday')), (2, _('Wednesday')),
+        (3, _('Thursday')), (4, _('Friday')), (5, _('Saturday')), (6, _('Sunday')),
     ]
 
     user = models.ForeignKey(
@@ -135,24 +138,36 @@ class ProviderAvailability(models.Model):
 class Session(models.Model):
 
     STATUS_CHOICES = [
-        ('scheduled', 'مجدولة'),
-        ('in_progress', 'جارية'),
-        ('waiting_confirmation', 'بانتظار التأكيد'),
-        ('completed', 'مكتملة'),
-        ('cancelled', 'ملغاة'),
-        ('disputed', 'متنازع عليها'),
+        ('scheduled', _('Scheduled')), ('in_progress', _('In progress')),
+        ('awaiting_confirmation', _('Awaiting confirmation')),
+        ('completed', _('Completed')), ('cancelled', _('Cancelled')),
+        ('disputed', _('Disputed')),
     ]
 
     DELIVERY_CHOICES = [
-        ('online', 'عن بعد'),
-        ('in_person', 'حضوري'),
+        ('online', _('Remote')), ('in_person', _('In person')),
     ]
 
-    exchange = models.OneToOneField(
+    exchange = models.ForeignKey(
         ExchangeRequest,
         on_delete=models.CASCADE,
-        related_name='session',
+        related_name='sessions',
         verbose_name='طلب التبادل'
+    )
+
+    learner = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.PROTECT,
+        related_name='learning_sessions', verbose_name=_('Learner'), null=True, blank=True,
+    )
+
+    provider = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.PROTECT,
+        related_name='teaching_sessions', verbose_name=_('Provider'), null=True, blank=True,
+    )
+
+    offer = models.ForeignKey(
+        'skills.SkillOffer', on_delete=models.PROTECT,
+        related_name='sessions', verbose_name=_('Skill offer'), null=True, blank=True,
     )
 
     scheduled_start = models.DateTimeField(
@@ -200,6 +215,10 @@ class Session(models.Model):
         verbose_name='وقت الإكمال'
     )
 
+    uses_reward_system = models.BooleanField(default=True, editable=False)
+    reward_processed = models.BooleanField(default=False, editable=False)
+    rewarded_at = models.DateTimeField(blank=True, null=True, editable=False)
+
     created_at = models.DateTimeField(
         auto_now_add=True,
         verbose_name='تاريخ الإنشاء'
@@ -214,6 +233,9 @@ class Session(models.Model):
         verbose_name = 'جلسة'
         verbose_name_plural = 'الجلسات'
         ordering = ['-scheduled_start']
+        constraints = [
+            models.UniqueConstraint(fields=['exchange', 'offer'], name='unique_exchange_offer_session')
+        ]
 
     def __str__(self):
         return f'جلسة #{self.pk}'

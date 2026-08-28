@@ -1,0 +1,89 @@
+﻿{% load static i18n %}{% get_current_language as LANGUAGE_CODE %}<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HourBank | {% trans "Your time has value" %}</title>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/hero-overrides.css' %}">
+</head>
+<body>{% include 'header.html' %}<main id="top">
+<section class="hero hero-image home-hero" style="background-image: url('{% static 'images/hourbank-hero.png' %}');">
+<div class="home-hero-overlay" aria-hidden="true"></div>
+<a class="home-hero-start" href="{% url 'skills:explore' %}">{% trans "Get started" as get_started_label %}{{ get_started_label|title }}</a>
+<div class="container hero-grid">
+<div class="copy reveal">
+<p class="eyebrow">{% trans "A platform for exchanging skills with time" %}</p>
+<h1>{% trans "Share your skills and learn something new." %}</h1>
+<p class="lead">{% trans "Teach what you know, earn hours, and use them to learn your next skill." %}</p>
+<div class="buttons">
+{% if not request.user.is_authenticated %}<a class="btn light" href="{% url 'accounts:register' %}">{% trans "Create account" %}</a>{% endif %}</div>
+</div>
+<div class="visual reveal">
+<div class="clockbox">
+<div class="clock">
+<i>
+</i>
+<b>
+</b>
+</div>
+<small>{% trans "Your available balance" %}</small>
+<strong>12:30 <em>{% trans "hours" %}</em>
+</strong>
+<div class="progress">
+<i>
+</i>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="stats container">
+<div>
+<strong>10,000+</strong>
+<p>{% trans "Hours exchanged" %}</p>
+</div>
+<div>
+<strong>3,500+</strong>
+<p>{% trans "Active users" %}</p>
+</div>
+<div>
+<strong>700+</strong>
+<p>{% trans "Available skills" %}</p>
+</div>
+<div>
+<strong>95%</strong>
+<p>{% trans "User satisfaction" %}</p>
+</div>
+</section>
+<section class="section how" id="how">
+<div class="container">
+<div class="heading">
+<p class="eyebrow">{% trans "Simple and transparent" %}</p>
+<h2>{% trans "How does HourBank work?" %}</h2>
+</div>
+<div class="steps">
+<article>
+<small>01</small>
+<h3>{% trans "Teach a skill" %}</h3>
+<p>{% trans "Share your expertise with someone who needs it." %}</p>
+</article>
+<article>
+<small>02</small>
+<h3>{% trans "Earn hours" %}</h3>
+<p>{% trans "Time is added to your wallet for every session." %}</p>
+</article>
+<article>
+<small>03</small>
+<h3>{% trans "Learn what you love" %}</h3>
+<p>{% trans "Use your hours to book a session with an expert." %}</p>
+</article>
+</div>
+</div>
+</section>
+</main>{% include 'footer.html' %}<script src="{% static 'js/home.js' %}">
+</script>
+</body>
+</html>
+

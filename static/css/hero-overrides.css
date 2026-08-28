@@ -1,0 +1,115 @@
+.hero.hero-image,
+.home-hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero.hero-image::before {
+    z-index: 1;
+    background: transparent;
+    pointer-events: none;
+}
+
+.home-hero-overlay {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 32, 63, .34), rgba(0, 50, 89, .16) 42%, transparent 68%);
+    pointer-events: none;
+}
+
+.home-hero-start {
+    position: absolute;
+    z-index: 20;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    min-height: 52px;
+    padding: 14px 28px;
+    border: 1px solid rgba(255, 255, 255, .7);
+    border-radius: 14px;
+    opacity: 1;
+    visibility: visible;
+    color: #1f2937;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
+}
+
+.home-hero-start:hover {
+    transform: translateY(-50%) scale(1.03);
+    background: #f8fbff;
+    box-shadow: 0 15px 38px rgba(0, 0, 0, .24);
+}
+
+.hero-image .visual {
+    visibility: hidden;
+}
+
+html[lang="ar"] .hero-image .copy {
+    direction: rtl;
+    text-align: right;
+}
+
+html[lang="en"] .hero-image .copy {
+    direction: ltr;
+    text-align: left;
+}
+
+@media (max-width: 950px) {
+    .hero.hero-image {
+        min-height: 680px;
+        background-position: 58% center;
+    }
+
+    .home-hero-overlay {
+        background: linear-gradient(180deg, rgba(0, 36, 66, .25), rgba(0, 40, 70, .12) 58%, rgba(0, 24, 42, .22));
+    }
+
+    .hero-image .hero-grid {
+        min-height: 680px;
+        padding-bottom: 80px;
+    }
+}
+
+@media (max-width: 560px) {
+    .hero.hero-image,
+    .hero-image .hero-grid {
+        min-height: 620px;
+    }
+
+    .hero.hero-image {
+        background-position: 62% center;
+    }
+
+    .home-hero-start {
+        top: auto;
+        bottom: 52px;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 170px;
+    }
+
+    .home-hero-start:hover {
+        transform: translateX(-50%) scale(1.03);
+    }
+
+    .hero-image .buttons {
+        width: 100%;
+    }
+
+    .hero-image .buttons .btn {
+        max-width: 100%;
+    }
+}

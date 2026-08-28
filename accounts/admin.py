@@ -26,7 +26,6 @@ class UserProfileAdmin(admin.ModelAdmin):
     search_fields = (
         'user__username',
         'user__email',
-        'phone',
         'city',
         'country',
     )

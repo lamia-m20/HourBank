@@ -1,14 +1,15 @@
 from django.conf import settings
 from django.db import models
+from cloudinary.models import CloudinaryField
+from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
 
 class UserProfile(models.Model):
 
     ACCOUNT_TYPE_CHOICES = [
-        ('individual', 'فرد'),
-        ('professional', 'محترف'),
-        ('trainer', 'مدرب'),
-        ('organization', 'منظمة'),
+        ('individual', _('Individual')), ('professional', _('Professional')),
+        ('trainer', _('Trainer')), ('organization', _('Organization')),
     ]
 
     user = models.OneToOneField(
@@ -25,11 +26,16 @@ class UserProfile(models.Model):
         verbose_name='نوع الحساب'
     )
 
-    profile_image = models.ImageField(
-        upload_to='accounts/profile_images/',
+    # ==========================================
+    # الصورة الشخصية - Cloudinary
+    # ==========================================
+
+    profile_image = CloudinaryField(
+        'الصورة الشخصية',
+        resource_type='image',
+        folder='hourbank/accounts/profile_images',
         blank=True,
-        null=True,
-        verbose_name='الصورة الشخصية'
+        null=True
     )
 
     bio = models.TextField(
@@ -37,10 +43,10 @@ class UserProfile(models.Model):
         verbose_name='نبذة شخصية'
     )
 
-    phone = models.CharField(
-        max_length=30,
+    birth_date = models.DateField(
+        _('Date of birth'),
+        null=True,
         blank=True,
-        verbose_name='رقم الهاتف'
     )
 
     city = models.CharField(
@@ -111,3 +117,12 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.get_username()
+
+    @property
+    def age(self):
+        if not self.birth_date:
+            return None
+        today = timezone.localdate()
+        return today.year - self.birth_date.year - (
+            (today.month, today.day) < (self.birth_date.month, self.birth_date.day)
+        )

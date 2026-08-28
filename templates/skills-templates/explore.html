@@ -1,0 +1,85 @@
+﻿{% load static i18n %}{% get_current_language as LANGUAGE_CODE %}<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% trans "Explore skills" %} | HourBank</title>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/skills.css' %}">
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body class="skills-page">{% include 'header.html' %}<main>
+<section class="skills-hero" style="background-image: url('{% static 'images/hourbank-hero.png' %}');">
+<div class="skills-shell hero-content">
+<span class="section-kicker">{% trans "Learn from the community" %}</span>
+<h1>{% trans "Explore skills" %}</h1>
+<p>{% trans "Search by skill, category, offer, or provider." %}</p>
+<form class="search-form" method="get">
+<input type="search" name="search" value="{{ filters.search }}" placeholder="{% trans 'Search for Python, programming, design...' %}">
+<button type="submit">{% trans "Search" %}</button>
+</form>
+</div>
+</section>
+<section class="skills-content">
+<div class="skills-shell">
+<form class="filters-panel" method="get">
+<input type="hidden" name="search" value="{{ filters.search }}">
+<div class="filter-field">
+<label>{% trans "Category" %}</label>
+<select name="category">
+<option value="">{% trans "All categories" %}</option>{% for item in categories %}<option value="{{ item.pk }}" {% if filters.category == item.pk|stringformat:'s' %}selected{% endif %}>{{ item.localized_name }}</option>{% endfor %}</select>
+</div>
+<div class="filter-field">
+<label>{% trans "Level" %}</label>
+<select name="level">
+<option value="">{% trans "All levels" %}</option>{% for value,label in levels %}<option value="{{ value }}" {% if filters.level == value %}selected{% endif %}>{{ label }}</option>{% endfor %}</select>
+</div>
+<div class="filter-field">
+<label>{% trans "Delivery method" %}</label>
+<select name="delivery">
+<option value="">{% trans "All delivery methods" %}</option>{% for value,label in delivery_methods %}<option value="{{ value }}" {% if filters.delivery == value %}selected{% endif %}>{{ label }}</option>{% endfor %}</select>
+</div>
+<div class="filter-field">
+<label>{% trans "Duration" %}</label>
+<select name="duration">
+<option value="">{% trans "Any duration" %}</option>{% for item in durations %}<option value="{{ item }}" {% if filters.duration == item|stringformat:'s' %}selected{% endif %}>{{ item }} {% trans "minutes" %}</option>{% endfor %}</select>
+</div>
+<button class="filter-submit" type="submit">{% trans "Apply filters" %}</button>
+<a class="filters-reset" href="{% url 'skills:explore' %}">{% trans "Reset" %}</a>
+</form>
+<div class="results-heading">
+<h2>{% trans "Available offers" %}</h2>
+<span class="results-count">{{ offers|length }}</span>
+</div>{% if offers %}<div class="offers-grid">{% for offer in offers %}<article class="offer-card">
+<div class="card-topline">
+<span class="category-badge">{{ offer.category_label }}</span>
+</div>
+<a class="provider" href="{% url 'accounts:public_profile' offer.user.username %}">
+<div class="provider-avatar">{% if offer.user.profile.profile_image %}<img src="{{ offer.user.profile.profile_image.url }}" alt="{{ offer.user.username }}">{% else %}<span>{{ offer.user.username|first|upper }}</span>{% endif %}</div>
+<strong>{{ offer.user.get_full_name|default:offer.user.username }}</strong>
+</a>
+<div class="offer-main">
+<span class="skill-name">{{ offer.skill.name }}</span>
+<h3>{{ offer.title }}</h3>
+<p>{{ offer.description|truncatechars:125 }}</p>
+</div>
+<div class="offer-meta">
+<span>{{ offer.get_level_display }}</span>
+<span>{{ offer.get_delivery_method_display }}</span>
+<span>{{ offer.session_duration_minutes }} {% trans "minutes" %}</span>
+</div>
+<div class="offer-footer">
+<div class="hour-cost">
+<strong>{{ offer.hour_cost }}</strong>
+<span>{% trans "hours" %}</span>
+</div>
+<a href="{% url 'skills:offer_detail' offer.pk %}">{% trans "View details" %}</a>
+</div>
+</article>{% endfor %}</div>{% else %}<div class="empty-state">
+<h2>{% trans "No skills are available right now" %}</h2>
+<p>{% trans "Try changing the filters or add the first skill offer." %}</p>
+</div>{% endif %}</div>
+</section>
+</main>{% include 'footer.html' %}</body>
+</html>
+

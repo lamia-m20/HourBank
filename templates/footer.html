@@ -1,0 +1,17 @@
+{% load static i18n %}
+<link rel="stylesheet" href="{% static 'css/site-chrome.css' %}">
+<footer class="hb-footer">
+    <div class="hb-footer-inner">
+        <div>
+            <strong>{% trans "HourBank" %}</strong>
+            <p>{% trans "A time-based skill and knowledge exchange platform where you can teach what you know and learn new skills from others in a flexible and fair way." %}</p>
+        </div>
+        <div>
+            <strong>{% trans "Email" %}</strong>
+            <a href="mailto:{{ default_from_email }}" dir="ltr">{{ default_from_email }}</a>
+        </div>
+    </div>
+    <div class="hb-footer-bottom">
+        &copy; {% now "Y" %} HourBank. {% trans "All rights reserved" %}.
+    </div>
+</footer>

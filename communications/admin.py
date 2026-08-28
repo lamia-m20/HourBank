@@ -137,6 +137,7 @@ class DisputeAdmin(admin.ModelAdmin):
     list_display = (
         'id',
         'exchange',
+        'session',
         'opened_by',
         'against_user',
         'reason',
@@ -151,6 +152,7 @@ class DisputeAdmin(admin.ModelAdmin):
     )
 
     search_fields = (
+        'session__id',
         'opened_by__username',
         'opened_by__email',
         'against_user__username',
